@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
+
 public class FirstSpringTest {
     @Test
     public void testFirstSpringCode(){
@@ -17,5 +19,9 @@ public class FirstSpringTest {
 
         Object userDaoBean = applicationContext.getBean("userDaoBean");
         System.out.println(userDaoBean);
+
+//        Object nowTime = applicationContext.getBean("nowTime");
+        // 通过指定返回的类，从而达到直接返回该类的作用，不需要向下转型了。
+        Date nowTime = applicationContext.getBean("nowTime", Date.class);
     }
 }

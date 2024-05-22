@@ -48,7 +48,12 @@
         userBean    com.believesun.spring6.dao.UserDaoImplForMysql
         .....
     5.Spring的配置文件可以有多个。
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(Spring XMl Name01,Spring XMl Name02);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(Spring XMl Name01,Spring XMl Name02,xml/spring.xml);
+    6.也可以是非自定义的类。
+    7.如果getBean后id不存在，则报错，不会返回null
+    8.getBean指定返回参数，ApplicationContext.getBean("id",你需要指定返回类型的Class)
+    9.如果Spring的配置文件不在resources下，用FileSystemXmlApplicationContext("绝对路径");去获取
 
-    
-        
+ApplicationContext的超级父接口是BeanFactory（Bean工厂）
+    BeanFactory是顶级接口。使用了工厂模式。
+不是在调用getBean方法的时候实例化对象，当我们运行了 new ClassPathXmlApplicationContext()的时候，就实例化好了！！！

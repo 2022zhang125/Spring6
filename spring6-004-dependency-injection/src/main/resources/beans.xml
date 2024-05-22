@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDaoBean" class="com.believesun.spring6.dao.UserDao" />
+    <bean id="vipDaoBean" class="com.believesun.spring6.dao.VipDao" />
+    <!--什么都不指定，直接用-->
+    <bean id="csBean3" class="com.believesun.spring6.service.CustomerService">
+        <constructor-arg ref="userDaoBean" />
+        <constructor-arg ref="vipDaoBean" />
+    </bean>
+    <!--根据参数名字注入-->
+    <bean id="csBean2" class="com.believesun.spring6.service.CustomerService">
+        <constructor-arg name="userDao" ref="userDaoBean" />
+        <constructor-arg name="vipDao" ref="vipDaoBean" />
+    </bean>
+    <!--根据下标进行注入-->
+    <bean id="csBean" class="com.believesun.spring6.service.CustomerService" >
+        <!--
+            这里使用constructor-agr标签，对构造方法的指定位置的指定属性进行注入操作。
+        -->
+        <constructor-arg index="0" ref="userDaoBean"/>
+        <constructor-arg index="1" ref="vipDaoBean"/>
+    </bean>
+</beans>

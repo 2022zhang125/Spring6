@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--Dao-->
+    <bean id="userDaoBean" class="com.believesun.spring6.dao.UserDao" />
+    <!--Service-->
+    <bean id="userServiceBean" class="com.believesun.spring6.service.UserService">
+        <!--
+            为了，让set方法能够被调用，这里需要配置property标签
+            这里的name的值的要求：
+                将set方法，去掉set，然后把剩下来的首字母变小写
+
+            public void setUserDao(UserDao userDao) {
+                this.userDao = userDao;
+            }
+            这里
+            第一：要确定是哪个set方法
+            第二：传入你想注入的bean的id,用ref（references引用）
+        -->
+        <property name="userDao" ref="userDaoBean"/>
+    </bean>
+</beans>

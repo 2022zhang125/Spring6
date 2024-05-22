@@ -3,5 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/spring6-002-first/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-002-first/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-003-log4j2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-003-log4j2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-004-dependency-injection/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-004-dependency-injection/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-005-set-di/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-005-set-di/src/main/resources" charset="UTF-8" />
   </component>
 </project>
