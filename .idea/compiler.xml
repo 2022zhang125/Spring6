@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring6-001-revelation" />
-        <module name="spring6-005-set-di" />
+        <module name="spring6-002-first-review" />
         <module name="spring6-003-log4j2" />
         <module name="spring6-002-first" />
+        <module name="spring6-review-set" />
+        <module name="spring6-001-revelation" />
+        <module name="spring6-005-set-di" />
         <module name="spring6-004-dependency-injection" />
       </profile>
     </annotationProcessing>

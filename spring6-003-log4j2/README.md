@@ -4,3 +4,6 @@
         Logger logger = LoggerFactory.getLogger(Log4j2Test.class);
         // 通过该对象对日志进行填充
         logger.info()/logger.error()/logger.debug().....
+
+2.彩色输出
+    -Dlog4j.skipJansi=false

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注入Map数组-->
+    <bean id="PeopleBean" class="com.believesun.set.pojo.People">
+        <property name="addr">
+            <map>
+                <entry key="1" value="安徽省六安市"/>
+                <entry key="2" value="湖北省黄石市"/>
+            </map>
+        </property>
+        <!--注入Properties集合-->
+        <property name="properties">
+            <props>
+                <prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+                <prop key="username">root</prop>
+                <prop key="password">111111</prop>
+                <prop key="url">jdbc://mysql:localhost:3306/spring6</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

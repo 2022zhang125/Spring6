@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="orderDaoBean" class="com.believesun.spring6.dao.OrderDao" />
+
+    <bean id="orderService" class="com.believesun.spring6.service.OrderService">
+        <!--使用外部注入-->
+        <property name="orderDao" ref="orderDaoBean" />
+    </bean>
+    <bean id="orderService2" class="com.believesun.spring6.service.OrderService">
+        <!--内部注入-->
+        <property name="orderDao">
+            <bean class="com.believesun.spring6.dao.OrderDao" />
+        </property>
+    </bean>
+</beans>

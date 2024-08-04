@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置信息，加载Bean对象-->
+    <!--DAO层对象-->
+    <bean id="StudentDaoImplBean" class="com.believesun.set.dao.StudentDaoImpl" />
+    <!--pojo对象-->
+    <bean id="StudentBean" class="com.believesun.set.pojo.Student" />
+    <!--Service对象-->
+    <bean id="StudentServiceImplBean" class="com.believesun.set.service.StudentServiceImpl">
+        <!--Set注入-->
+        <property name="studentDao" ref="StudentDaoImplBean" />
+    </bean>
+</beans>

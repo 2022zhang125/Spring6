@@ -9,7 +9,7 @@ set注入（常用）
         <!--
             为了，让set方法能够被调用，这里需要配置property标签
             这里的name的值的要求：
-                将set方法，去掉set，然后把剩下来的首字母变小写
+                将set方法，去掉set，然后把剩下来的首字母变小写2
 
             public void setUserDao(UserDao userDao) {
                 this.userDao = userDao;

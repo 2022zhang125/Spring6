@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="ClassBean" class="com.believesun.set.pojo.Class" />
+    <!--给Student类注入一个Class属性，并且给Class的name进行赋值操作-->
+    <bean id="StudentBean" class="com.believesun.set.pojo.Student">
+        <property name="clazz" ref="ClassBean" />
+        <property name="clazz.name" value="三年二班" />
+        <property name="id" value="1"/>
+        <property name="name" value="zhangsi" />
+    </bean>
+</beans>

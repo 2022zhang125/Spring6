@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/spring6-003-log4j2/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-004-dependency-injection/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-005-set-di/pom.xml" />
+        <option value="$PROJECT_DIR$/spring6-002-first-review/pom.xml" />
+        <option value="$PROJECT_DIR$/spring6-review-set/pom.xml" />
       </list>
     </option>
   </component>
