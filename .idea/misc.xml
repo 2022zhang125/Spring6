@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/spring6-002-first-review/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-review-set/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-006-scope/pom.xml" />
+        <option value="$PROJECT_DIR$/spring6-007-bean-instantiation/pom.xml" />
       </list>
     </option>
   </component>

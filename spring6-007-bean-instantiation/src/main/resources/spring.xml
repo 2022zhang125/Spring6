@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dateBean" class="com.believesun.instantiation.DateFactoryBean">
+        <!--手动给值，进行加工，加工成符合要求的Date对象-->
+        <constructor-arg index="0" value="1997-10-21" />
+    </bean>
+
+    <bean id="student" class="com.believesun.instantiation.Student">
+        <property name="birth" ref="dateBean"/>
+    </bean>
+
+
+
+
+    <!--第一种方式：通过构造方法直接获取Bean对象-->
+    <bean id="sb" class="com.believesun.instantiation.SpringBean" />
+
+    <!--第二种方式：通过静态工厂方法模式获取（简单工厂模式）-->
+    <bean id="stat" class="com.believesun.instantiation.StatFactory" factory-method="get" />
+
+    <!--第三种方式：通过工厂方法模式获取Bean对象-->
+    <!--第一步：创建factory对象-->
+    <bean id="gunFactory" class="com.believesun.instantiation.GunFactory" />
+    <!--第二步：创建Bean对象，指定Factory工厂，指定对应工厂的实例方法-->
+    <bean id="gun" factory-bean="gunFactory" factory-method="get" />
+
+    <!--第四种方式：通过工厂实现FactoryBean来创建对象-->
+    <bean id="person" class="com.believesun.instantiation.PersonFactoryBean"/>
+</beans>
