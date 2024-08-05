@@ -1,15 +1,42 @@
 package com.believesun.set.test;
 
-import com.believesun.set.pojo.People;
-import com.believesun.set.pojo.Person;
-import com.believesun.set.pojo.Student;
-import com.believesun.set.pojo.User;
+import com.believesun.set.pojo.*;
 import com.believesun.set.service.StudentServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ActionTest {
+    @Test
+    public void testOutPropertiesDI(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-review-set-springDI.xml");
+        MyDataSource myDataSourceBean = applicationContext.getBean("MyDataSourceBean", MyDataSource.class);
+        System.out.println(myDataSourceBean);
+    }
+    @Test
+    public void testUtil(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-review-set-util.xml");
+        MyDataSource01 myDataSource01Bean = applicationContext.getBean("MyDataSource01Bean", MyDataSource01.class);
+        System.out.println(myDataSource01Bean);
+    }
+    @Test
+    public void testC(){
+        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("spring-review-set-c.xml");
+        Customer customerBean = applicationContext.getBean("CustomerBean", Customer.class);
+        System.out.println(customerBean);
+    }
+    @Test
+    public void testP(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-review-set-p.xml");
+        Customer customerBean = applicationContext.getBean("CustomerBean", Customer.class);
+        System.out.println(customerBean);
+    }
+    @Test
+    public void testNullDI(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-review-set-nullDI.xml");
+        Vip vipBean = applicationContext.getBean("VipBean", Vip.class);
+        System.out.println(vipBean);
+    }
     @Test
     public void testMapDI(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-review-set-mapDI.xml");

@@ -161,4 +161,161 @@
 
 ## 第八种：注入Null和空字符串
     注入空字符串使用：<value/> 或者 value=""
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="VipBean" class="com.believesun.set.pojo.Vip">
+        <!--注入空字符串-->
+        <property name="email" value=""/>
+    </bean>
+</beans>
+```
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="VipBean" class="com.believesun.set.pojo.Vip">
+        <!--注入空字符串-->
+        <property name="email">
+            <value/>
+        </property>
+    </bean>
+</beans>
+```
     注入null使用：<null/> 或者 不为该属性赋值
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="VipBean" class="com.believesun.set.pojo.Vip">
+        <property name="email">
+            <null/>
+        </property>
+    </bean>
+</beans>
+
+```
+## 第九种：注入的值中含有特殊字符（> < 引号等）
+    ● 第一种：特殊符号使用转义字符代替。
+        >	&gt;
+        <	&lt;
+        '	&apos;
+        "	&quot;
+        &	&amp;
+    ● 第二种：将含有特殊符号的字符串放到：<![CDATA[]]> 当中。因为放在CDATA区中的数据不会被XML文件解析器解析。
+```xml
+<property name="result">
+            <!--只能使用value标签-->
+            <value><![CDATA[2 < 3]]></value>
+</property>
+```
+
+# P命名空间注入
+    第一行加入：xmlns:p="http://www.springframework.org/schema/p"
+    引入P命名空间注入，C命名空间注入，以及util命名空间注入以简化赋值操作。
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--P命名空间注入-->
+    <!--
+        第一步：复制xmlns="http://www.springframework.org/schema/beans"
+        第二步：添加p
+        第三步：xmlns:p="http://www.springframework.org/schema/p"
+    -->
+    <!--加载Bean-->
+    <bean id="CustomerBean" class="com.believesun.set.pojo.Customer" p:age="20" p:name="张三" />
+</beans>
+```
+
+# C命名空间注入(基于构造方法的注入)
+    添加:xmlns:c="http://www.springframework.org/schema/c"
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="CustomerBean" class="com.believesun.set.pojo.Customer" c:_0="李四" c:_1="30"/>
+</beans>
+
+```
+
+# Util命名空间注入
+    在第一行加入：
+       xmlns:util="http://www.springframework.org/schema/util"
+    在最后一行加入：
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <util:properties id="prop">
+        <prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+        <prop key="url">jdbc:mysql://localhost:3306/spring6</prop>
+        <prop key="username">root</prop>
+        <prop key="password">111111</prop>
+    </util:properties>
+    <!--创建Bean对象，类似于Mybatis的结果映射 （resultMap）-->
+    <bean id="MyDataSource01Bean" class="com.believesun.set.pojo.MyDataSource01">
+        <property name="properties" ref="prop" />
+    </bean>
+</beans>
+```
+# byName通过名称自动注入
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userService" class="com.powernode.spring6.service.UserService" autowire="byName"/>
+    <bean id="aaa" class="com.powernode.spring6.dao.UserDao"/>
+</beans>
+```
+    这里使用autowire="byName" 自动装配，将其set方法的setAAA，直接装配到userService中。
+
+# byType依据类型注入（构造方法）autowire="byType"
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountService" class="com.powernode.spring6.service.AccountService" autowire="byType"/>
+    <bean id="x" class="com.powernode.spring6.dao.AccountDao"/>
+    <bean id="y" class="com.powernode.spring6.dao.AccountDao"/>
+</beans>
+```
+
+# Spring引入外部Properties文件（jdbc.properties）
+    引入方式类似于util命名空间
+    在导入外部props文件时，需要先
+    <context:property-placeholder location="jdbc.properties" />
+    然后使用${}来取值，这里使用 jdbc. 的方式是为了避免其中的username取到系统的用户名，所以使用jdbc去约束
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--引入外部properties文件，这里需要用到Context命名空间-->
+    <context:property-placeholder location="jdbc.properties" />
+
+    <bean id="MyDataSourceBean" class="com.believesun.set.pojo.MyDataSource">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+</beans>
+```

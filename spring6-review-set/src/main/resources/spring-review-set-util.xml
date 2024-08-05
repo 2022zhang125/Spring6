@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <util:properties id="prop">
+        <prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+        <prop key="url">jdbc:mysql://localhost:3306/spring6</prop>
+        <prop key="username">root</prop>
+        <prop key="password">111111</prop>
+    </util:properties>
+    <!--创建Bean对象，类似于Mybatis的结果映射 （resultMap）-->
+    <bean id="MyDataSource01Bean" class="com.believesun.set.pojo.MyDataSource01">
+        <property name="properties" ref="prop" />
+    </bean>
+</beans>

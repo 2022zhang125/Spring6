@@ -11,6 +11,8 @@
     <file url="file://$PROJECT_DIR$/spring6-004-dependency-injection/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-005-set-di/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-005-set-di/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-006-scope/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-006-scope/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-review-set/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-review-set/src/main/resources" charset="UTF-8" />
   </component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="VipBean" class="com.believesun.set.pojo.Vip">
+        <!--注入空字符串-->
+        <!--<property name="email">
+            <value/>
+        </property>-->
+        <!--注入null，一般不写就自动注入null,或使用null标签-->
+        <property name="email">
+            <null/>
+        </property>
+    </bean>
+</beans>
