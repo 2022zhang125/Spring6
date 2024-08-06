@@ -14,6 +14,7 @@
         <module name="spring6-review-set" />
         <module name="spring6-001-revelation" />
         <module name="spring6-005-set-di" />
+        <module name="spring6-009-circular-dependency" />
         <module name="spring6-006-scope" />
         <module name="spring6-004-dependency-injection" />
       </profile>
