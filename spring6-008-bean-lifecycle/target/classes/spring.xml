@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置Bean后处理器,这个后处理器会作用于整个Spring文件，不只是单个Bean对象-->
+    <bean class="com.believesun.bean.LogBeanPostProcessor" />
+
+    <bean id="user" class="com.believesun.bean.User" init-method="initBean" destroy-method="destroyBean" p:name="张三"/>
+</beans>

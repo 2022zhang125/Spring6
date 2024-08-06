@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring6-002-first-review" />
         <module name="spring6-007-bean-instantiation" />
+        <module name="spring6-008-bean-lifecycle" />
         <module name="spring6-003-log4j2" />
         <module name="spring6-002-first" />
         <module name="spring6-review-set" />
