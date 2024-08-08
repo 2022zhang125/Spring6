@@ -1,4 +1,4 @@
-package org.myspringfarmework.core;
+package org.myspringframework.core;
 
 public interface ApplicationContext {
     /**

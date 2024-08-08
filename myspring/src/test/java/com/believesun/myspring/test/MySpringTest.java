@@ -2,8 +2,8 @@ package com.believesun.myspring.test;
 
 import com.believesun.bean.UserService;
 import org.junit.Test;
-import org.myspringfarmework.core.ApplicationContext;
-import org.myspringfarmework.core.ClassPathXmlApplicationContext;
+import org.myspringframework.core.ApplicationContext;
+import org.myspringframework.core.ClassPathXmlApplicationContext;
 
 public class MySpringTest {
     @Test
