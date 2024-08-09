@@ -12,6 +12,7 @@
         <module name="static-porxy" />
         <module name="spring6-002-first" />
         <module name="spring6-010-ioc-annotation" />
+        <module name="dynamic-proxy-jdk" />
         <module name="spring6-009-circular-dependency" />
         <module name="review-annotation" />
         <module name="spring6-003-log4j2" />
@@ -20,6 +21,7 @@
         <module name="spring6-001-revelation" />
         <module name="spring6-005-set-di" />
         <module name="spring6-006-scope" />
+        <module name="dynamic-proxy-cglib" />
         <module name="spring6-004-dependency-injection" />
       </profile>
     </annotationProcessing>

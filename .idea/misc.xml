@@ -20,6 +20,8 @@
         <option value="$PROJECT_DIR$/review-annotation/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-010-ioc-annotation/pom.xml" />
         <option value="$PROJECT_DIR$/static-porxy/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamic-proxy-jdk/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamic-proxy-cglib/pom.xml" />
       </list>
     </option>
   </component>
