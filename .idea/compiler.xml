@@ -19,6 +19,7 @@
         <module name="spring6-003-log4j2" />
         <module name="spring6-review-set" />
         <module name="myspring" />
+        <module name="spring6-012-spring-aop-instance" />
         <module name="spring6-001-revelation" />
         <module name="spring6-005-set-di" />
         <module name="spring6-006-scope" />
