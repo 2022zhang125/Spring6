@@ -29,6 +29,8 @@
     <file url="file://$PROJECT_DIR$/spring6-009-circular-dependency/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-010-ioc-annotation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-010-ioc-annotation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-011-spring-aspectj-aop-anno/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring6-011-spring-aspectj-aop-anno/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-review-set/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring6-review-set/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static-porxy/src/main/java" charset="UTF-8" />
