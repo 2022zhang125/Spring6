@@ -23,4 +23,10 @@ public class AccountDaoImpl implements AccountDao {
         String sql = "update t_act set balance = ? where actno = ?";
         return jdbcTemplate.update(sql, account.getBalance(),account.getActno());
     }
+
+    @Override
+    public int insert(Account account) {
+        String sql = "insert into t_act values(?,?)";
+        return jdbcTemplate.update(sql,account.getActno(),account.getBalance());
+    }
 }

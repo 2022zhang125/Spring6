@@ -5,10 +5,9 @@ import com.believesun.bank.pojo.Account;
 import com.believesun.bank.service.AccountService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-@Service("accountService")
-@Transactional
+@Service("accountService1")
 public class AccountServiceImpl implements AccountService {
     @Resource(name = "accountDao")
     private AccountDao accountDao;
@@ -34,5 +33,18 @@ public class AccountServiceImpl implements AccountService {
         if (update!=2) {
             throw new RuntimeException("转账异常！！！");
         }
+    }
+    @Resource(name = "accountService2")
+    private AccountService accountService;
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public int save(Account account) {
+        // 插入 第一个用户信息
+        accountDao.insert(account);
+
+        // 在这里调用 AccountServiceImpl2中的save()方法。插入第二个用户信息
+        Account act_004 = new Account("act-004", 1000.0);
+        accountService.save(act_004);
+        return 0;
     }
 }

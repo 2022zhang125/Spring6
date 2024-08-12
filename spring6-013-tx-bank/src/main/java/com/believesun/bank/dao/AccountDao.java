@@ -16,4 +16,11 @@ public interface AccountDao {
      * @return 成功条数
      */
     int update(Account account);
+
+    /**
+     * 插入用户信息
+     * @param account 用户
+     * @return 成功条数
+     */
+    int insert(Account account);
 }
