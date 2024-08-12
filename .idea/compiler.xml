@@ -16,6 +16,7 @@
         <module name="dynamic-proxy-jdk" />
         <module name="spring6-009-circular-dependency" />
         <module name="review-annotation" />
+        <module name="spring6-014-junit" />
         <module name="spring6-003-log4j2" />
         <module name="spring6-review-set" />
         <module name="myspring" />
