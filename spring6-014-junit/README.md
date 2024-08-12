@@ -1,6 +1,6 @@
 # 使用Spring-test 简化 Junit4
     使用注解
-        @RunWith(SpringJunit4ClassRunner.class) 去开启Spring对Junit的支持
+        @RunWith(SpringJUnit4ClassRunner.class) 去开启Spring对Junit的支持
         @ContextConfiguration("classpath:spring.xml") 去代替 ApplicationContext
     使用自动类型注入，代替频繁getBean的对象
         @AutoWired

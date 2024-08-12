@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
+    </list>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -26,6 +31,8 @@
         <option value="$PROJECT_DIR$/spring6-012-spring-aop-instance/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-013-tx-bank/pom.xml" />
         <option value="$PROJECT_DIR$/spring6-014-junit/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-015-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring6-015-mybatis/pom.xml" />
       </list>
     </option>
   </component>

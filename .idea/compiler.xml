@@ -15,6 +15,7 @@
         <module name="spring6-010-ioc-annotation" />
         <module name="dynamic-proxy-jdk" />
         <module name="spring6-009-circular-dependency" />
+        <module name="spring6-015-mybatis" />
         <module name="review-annotation" />
         <module name="spring6-014-junit" />
         <module name="spring6-003-log4j2" />
